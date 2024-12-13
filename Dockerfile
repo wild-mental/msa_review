@@ -9,7 +9,7 @@ RUN ./gradlew bootJar --no-daemon
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 # Copy only the built JAR to the runtime stage
-COPY --from=build_stage /app/build/libs/msa_review-0_99.jar app.jar
+COPY --from=build_stage /app/build/libs/msa_review-aws.jar app.jar
 
 # 3. Set the entry point to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
