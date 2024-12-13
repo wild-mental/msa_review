@@ -40,4 +40,12 @@ public class ReviewController {
         List<Review> reviews = reviewService.getReviewsByProductId(productId);
         return ResponseEntity.ok(reviews);
     }
+
+    @GetMapping("/update-check")
+    public ResponseEntity<String> checkUpdate() {
+        String response = "<h1>MSA-REVIEW : GitOps Implemented!</h1>";
+        return ResponseEntity.ok()
+            .header("Content-Type", "text/html")
+            .body(response);
+    }
 }
